@@ -8,6 +8,7 @@ import com.bloxbean.cardano.client.plutus.spec.PlutusData;
 import com.easy1staking.jpgstore.jpgstorejavaclient.config.AccountConfig;
 import com.easy1staking.jpgstore.jpgstorejavaclient.config.BlockfrostConfig;
 import com.easy1staking.jpgstore.jpgstorejavaclient.config.JacksonConfig;
+import com.easy1staking.jpgstore.jpgstorejavaclient.model.Constants;
 import com.easy1staking.jpgstore.jpgstorejavaclient.model.ListingDetails;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,10 +33,15 @@ class JpgstorePurchaseServiceTest {
     private ListingDatumService listingDatumService;
 
 
+    /**
+     * Fully working code to puchase an NFT from jpg.store
+     * @throws ApiException
+     */
     @Test
     public void purchaseNft() throws ApiException {
 
-        Result<List<Utxo>> utxos = bfBackendService.getUtxoService().getUtxos("addr1zxgx3far7qygq0k6epa0zcvcvrevmn0ypsnfsue94nsn3tvpw288a4x0xf8pxgcntelxmyclq83s0ykeehchz2wtspks905plm",
+        Result<List<Utxo>> utxos = bfBackendService.getUtxoService().getUtxos(Constants.JPG_CONTRACT_ADDRESS,
+                // unit or asset_id (hex encode policy id + asset name)
                 "a5bb0e5bb275a573d744a021f9b3bff73595468e002755b447e01559484f534b594361736847726162303030333037343034",
                 1,
                 1);
