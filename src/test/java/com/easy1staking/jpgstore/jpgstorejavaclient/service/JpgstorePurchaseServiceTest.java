@@ -42,7 +42,7 @@ class JpgstorePurchaseServiceTest {
 
         Result<List<Utxo>> utxos = bfBackendService.getUtxoService().getUtxos(Constants.JPG_CONTRACT_ADDRESS,
                 // unit or asset_id (hex encode policy id + asset name)
-                "a5bb0e5bb275a573d744a021f9b3bff73595468e002755b447e01559484f534b594361736847726162303030333037343034",
+                "a5bb0e5bb275a573d744a021f9b3bff73595468e002755b447e01559484f534b594361736847726162303030333535363030",
                 1,
                 1);
 
